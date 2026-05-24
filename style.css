@@ -1,0 +1,187 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#120607;
+  color:white;
+  font-family:Arial, sans-serif;
+  overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:#2b0b12;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero-content p{
+  margin-top:20px;
+  font-size:18px;
+}
+
+/* ✍️ TYPING EFFECT */
+.typing{
+  font-size:60px;
+  color:#ffd6dc;
+  font-family:'Dancing Script', cursive;
+
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+
+  border-right:3px solid #ffd6dc;
+
+  max-width:0;
+
+  animation: typing 3s steps(18) forwards, blink 0.8s infinite;
+}
+
+@keyframes typing{
+  from{
+    max-width:0;
+  }
+  to{
+    max-width:100%;
+  }
+}
+
+@keyframes blink{
+  50%{
+    border-color:transparent;
+  }
+}
+
+/* STORY */
+.story-section{
+  padding:100px 20px;
+  background:#1b090b;
+}
+
+.section-title{
+  text-align:center;
+  font-size:50px;
+  margin-bottom:80px;
+  color:#ffd6dc;
+}
+
+.story-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:15px;
+}
+
+/* MEMORY ANIMATION */
+.memory{
+  opacity:0;
+  transform:translateY(50px);
+  transition:all 1s ease;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+.memory img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.memory.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.memory{
+  transition-delay: calc(var(--i) * 200ms);
+}
+
+/* LETTER */
+.letter-section{
+  padding:100px 20px;
+  background:#2a0d13;
+}
+
+.letter-container{
+  max-width:800px;
+  margin:auto;
+}
+
+.letter-container h2{
+  text-align:center;
+  font-size:50px;
+  margin-bottom:40px;
+  color:#ffd6dc;
+}
+
+.letter{
+  background:#f7f0e6;
+  color:#2b1b16;
+
+  padding:50px;
+  border-radius:12px;
+
+  max-width:800px;
+  margin:auto;
+
+  line-height:2;
+  font-size:18px;
+
+  font-family:"Segoe Script", "Lucida Handwriting", cursive;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.4),
+    inset 0 0 60px rgba(0,0,0,0.05);
+
+  position:relative;
+}
+/* VIDEO */
+.video-section{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.video-section h2{
+  font-size:50px;
+  margin-bottom:40px;
+  color:#ffd6dc;
+}
+
+.video-container{
+  max-width:800px;
+  margin:auto;
+}
+
+video{
+  width:50%;
+  max-width:400px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+.ending-text{
+  margin-top:30px;
+  font-size:22px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .story-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media(max-width:500px){
+  .story-grid{
+    grid-template-columns:1fr;
+  }
+}
